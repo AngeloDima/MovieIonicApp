@@ -1,4 +1,18 @@
-export interface iMovie {
+export interface SearchResponse {
+    Search: MoviePreview[]
+    totalResults: string
+    Response: string
+}
+
+export interface MoviePreview {
+    Title: string
+    Year: string
+    imdbID: string
+    Type: string
+    Poster: string
+}
+
+export interface Movie {
     Title: string
     Year: string
     Rated: string
@@ -31,11 +45,3 @@ export interface Rating {
     Value: string
 }
 
-
-export interface MoviePreview {
-    Title: string
-    Year: string
-    imdbID: string
-    Type: string
-    Poster: string
-}

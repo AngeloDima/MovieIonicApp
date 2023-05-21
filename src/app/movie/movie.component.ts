@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatiService } from '../dati.service';
-import { iMovie } from '../models/movie';
+import { SearchResponse } from '../models/movie';
 
 @Component({
   selector: 'app-movie',
@@ -9,13 +9,13 @@ import { iMovie } from '../models/movie';
 })
 export class MovieComponent implements OnInit {
 
-  data: iMovie[] = []; // Dichiarato come un array vuoto di oggetti iMovie
+  data?: SearchResponse // Dichiarato come un array vuoto di oggetti iMovie
 
   constructor(private datiService: DatiService) { }
 
   loadData() {
-    this.datiService.getData().subscribe((data: iMovie) => {
-      this.data = [data];
+    this.datiService.getData().subscribe((data: SearchResponse) => {
+      this.data = data;
       console.log(this.data);
     });
   }
@@ -25,3 +25,6 @@ export class MovieComponent implements OnInit {
   }
 
 }
+
+
+

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { iMovie } from './models/movie';
+import { SearchResponse } from './models/movie';
 
 
 @Injectable({
@@ -9,12 +9,12 @@ import { iMovie } from './models/movie';
 })
 export class DatiService {
 
-  url = "http://www.omdbapi.com/?i=tt3896198&apikey=16128fa2"
+  url = "http://www.omdbapi.com/?s=batman&apikey=16128fa2"
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<iMovie> {
-    return this.http.get<iMovie>(this.url)
+  getData(): Observable<SearchResponse> {
+    return this.http.get<SearchResponse>(this.url)
   }
 
 }
