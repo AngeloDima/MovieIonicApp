@@ -9,21 +9,19 @@ import { iMovie } from '../models/movie';
 })
 export class MovieComponent implements OnInit {
 
-  data?: iMovie
+  data: iMovie[] = []; // Dichiarato come un array vuoto di oggetti iMovie
 
-  constructor(private DatiService: DatiService) { }
+  constructor(private datiService: DatiService) { }
 
   loadData() {
-    this.DatiService.getData().subscribe((data: iMovie) => {
-      this.data = data
-      console.log(this.data)
-    })
+    this.datiService.getData().subscribe((data: iMovie) => {
+      this.data = [data];
+      console.log(this.data);
+    });
   }
-  ngOnInit() {
-    this.loadData()
 
+  ngOnInit() {
+    this.loadData();
   }
 
 }
-
-

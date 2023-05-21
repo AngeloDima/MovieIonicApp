@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { MovieComponent } from './movie.component';
 
 describe('MovieComponent', () => {
@@ -9,7 +8,7 @@ describe('MovieComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieComponent ],
+      declarations: [MovieComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

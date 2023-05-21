@@ -1,3 +1,5 @@
-<div>
-  ciao mondo
+<div *ngIf="data">
+  <div *ngFor="let movie of data">
+    <h3>{{ movie.Title }}</h3>
+  </div>
 </div>
