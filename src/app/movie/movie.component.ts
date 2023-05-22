@@ -9,7 +9,7 @@ import { SearchResponse } from '../models/movie';
 })
 export class MovieComponent implements OnInit {
 
-  data?: SearchResponse // Dichiarato come un array vuoto di oggetti iMovie
+  data?: SearchResponse
   searchQuery = ""
   selectedType = ""
 
@@ -25,19 +25,6 @@ export class MovieComponent implements OnInit {
     })
   }
 
-
-
   ngOnInit(): void {
-
   }
-
 }
-
-
-
-  // loadData() {
-  //   this.datiService.getData().subscribe((data: SearchResponse) => {
-  //     this.data = data;
-  //     console.log(this.data);
-  //   });
-  // }

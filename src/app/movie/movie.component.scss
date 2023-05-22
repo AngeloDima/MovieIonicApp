@@ -1,0 +1,18 @@
+.flex{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.container{
+  width: 100%;
+  background-color: rgba(255, 0, 0, 0.323);
+  overflow-y: scroll;
+}
+
+.box{
+  width: 100vw;
+  height: 250px;
+  background-color: rgba(0, 255, 132, 0.255);
+  border: 2px solid black;
+}

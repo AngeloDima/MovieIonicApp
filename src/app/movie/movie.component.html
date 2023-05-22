@@ -9,8 +9,10 @@
 </div>
 
 
-<div *ngIf="data">
+<div *ngIf="data" class="flex container">
   <div *ngFor="let movie of data.Search">
-    <h3>{{ movie.Title }}</h3>
+    <div class="box ">
+      <h3>{{ movie.Title }}</h3>
+    </div>
   </div>
 </div>

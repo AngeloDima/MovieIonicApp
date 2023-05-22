@@ -18,13 +18,5 @@ export class DatiService {
     return this.http.get<SearchResponse>(urlFi)
   }
 
-
-
 }
 
-
-
-
-  // getData(): Observable<SearchResponse> {
-  //   return this.http.get<SearchResponse>(this.url)
-  // }
