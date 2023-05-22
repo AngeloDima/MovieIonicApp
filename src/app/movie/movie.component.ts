@@ -10,21 +10,34 @@ import { SearchResponse } from '../models/movie';
 export class MovieComponent implements OnInit {
 
   data?: SearchResponse // Dichiarato come un array vuoto di oggetti iMovie
+  searchQuery = ""
+  selectedType = ""
 
   constructor(private datiService: DatiService) { }
 
-  loadData() {
-    this.datiService.getData().subscribe((data: SearchResponse) => {
-      this.data = data;
-      console.log(this.data);
-    });
+
+
+  cerca() {
+    this.datiService.search(this.searchQuery, this.selectedType).subscribe(sr => {
+      this.data = sr
+      console.log(sr)
+      console.log(this.data)
+    })
   }
 
-  ngOnInit() {
-    this.loadData();
+
+
+  ngOnInit(): void {
+
   }
 
 }
 
 
 
+  // loadData() {
+  //   this.datiService.getData().subscribe((data: SearchResponse) => {
+  //     this.data = data;
+  //     console.log(this.data);
+  //   });
+  // }

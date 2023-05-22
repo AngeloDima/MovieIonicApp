@@ -1,3 +1,14 @@
+<div>
+  <input type="text" name="" [(ngModel)]="searchQuery">
+  <select name="" [(ngModel)]="selectedType">
+    <option value="movie">Films</option>
+    <option value="series">Serie</option>
+  </select>
+
+  <button (click)="cerca()">Cerca</button>
+</div>
+
+
 <div *ngIf="data">
   <div *ngFor="let movie of data.Search">
     <h3>{{ movie.Title }}</h3>

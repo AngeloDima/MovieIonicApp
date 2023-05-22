@@ -9,12 +9,22 @@ import { SearchResponse } from './models/movie';
 })
 export class DatiService {
 
-  url = "http://www.omdbapi.com/?s=batman&apikey=16128fa2"
+  url = "http://www.omdbapi.com/?apikey=16128fa2&";
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<SearchResponse> {
-    return this.http.get<SearchResponse>(this.url)
+  search(query: string, type: string = "movie"): Observable<SearchResponse> {
+    let urlFi = `${this.url}type=${type}&s=${query}`;
+    return this.http.get<SearchResponse>(urlFi)
   }
 
+
+
 }
+
+
+
+
+  // getData(): Observable<SearchResponse> {
+  //   return this.http.get<SearchResponse>(this.url)
+  // }
