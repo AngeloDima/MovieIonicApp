@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, forkJoin, map, mergeMap, of } from 'rxjs';
 import { Movie, SearchResponse } from './models/movie';
 
 
@@ -16,11 +16,25 @@ export class DatiService {
   search(query: string, type: string = "movie"): Observable<SearchResponse> {
     let urlFi = `${this.url}type=${type}&s=${query}`;
     return this.http.get<SearchResponse>(urlFi).pipe(
-      map(response => {
+      mergeMap(response => {
         if (response && response.Search) {
-          response.Search.sort((a, b) => a.Title.localeCompare(b.Title));
+          //prendo i dettagli dei film
+          const movieRequests = response.Search.map(movie => this.getMovieId(movie.imdbID));
+          return forkJoin(movieRequests).pipe(
+            map(movies => {
+              //prendo il rating
+              response.Search.forEach((movie, index) => {
+                movie.imdbRating = movies[index].imdbRating;
+              });
+              //alfabetico
+              response.Search.sort((a, b) => a.Title.localeCompare(b.Title));
+              //decrescente (rating)
+              response.Search.sort((a, b) => parseFloat(b.imdbRating) - parseFloat(a.imdbRating));
+              return response;
+            })
+          );
         }
-        return response;
+        return of(response);
       })
     );
   }
