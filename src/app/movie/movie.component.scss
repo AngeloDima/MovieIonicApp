@@ -1,18 +1,36 @@
-.flex{
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
 
 .container{
   width: 100%;
-  background-color: rgba(255, 0, 0, 0.323);
+  // background-color: rgba(255, 0, 0, 0.323);
   overflow-y: scroll;
+  flex-direction: column;
+  gap: 80px;
+  display: flex;
 }
 
 .box{
-  width: 100vw;
-  height: 250px;
-  background-color: rgba(0, 255, 132, 0.255);
-  border: 2px solid black;
+  width: 100%;
+  height: 215px;
+  box-shadow: 0px 7px 10px 0px #50505033;
+  // background-color: aliceblue;
+
+  display: flex;
+  img{
+    width: 40%;
+    height: 100%;
+  }
+  .movieMiniDet{
+    text-align: center;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  button{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #ff000000;
+  }
 }

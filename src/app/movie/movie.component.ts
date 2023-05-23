@@ -27,4 +27,9 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  prova() {
+    console.log("ciao")
+  }
+
 }
