@@ -1,6 +1,29 @@
 <div *ngIf="dettail">
-  <h1> {{ dettail.Title }} </h1>
-  <h1> {{ dettail.Year }} </h1>
-  <h1> {{ dettail.Rated }} </h1>
+
+  <div class="container">
+
+    <div class="PoTi">
+      <img [src]="dettail.Poster">
+      <h1 class="text"> {{dettail.Title}} </h1>
+    </div>
+    <div class="info">
+      <p> {{dettail.Year}} </p>
+
+      <p> {{dettail.Released}} </p>
+
+      <p> {{dettail.Runtime}} </p>
+
+      <p> {{dettail.Genre}} </p>
+
+      <p> {{dettail.Language}} </p>
+
+      <p> {{dettail.Actors}} </p>
+
+      <p> {{dettail.Director}} </p>
+
+      <p> {{dettail.Plot}} </p>
+    </div>
+
+  </div>
 
 </div>
