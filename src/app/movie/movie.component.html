@@ -1,14 +1,14 @@
-<div>
-  <input type="text" name="" [(ngModel)]="searchQuery">
-  <select name="" [(ngModel)]="selectedType">
+<div class="container">
+  <input class="input-group-text w" type="text" name="" [(ngModel)]="searchQuery">
+  <select class="w" name="" [(ngModel)]="selectedType">
     <option value="movie">Films</option>
     <option value="series">Serie</option>
   </select>
-  <button (click)="cerca()">Cerca</button>
+  <button class="btn btn-primary w" (click)="cerca()">Cerca</button>
 </div>
 
 
-<div *ngIf="data" class="container">
+<div *ngIf="data" class="containers">
   <div *ngFor="let movie of data.Search">
     <div class="box">
       <img [src]="movie.Poster" alt="">
