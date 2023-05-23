@@ -11,12 +11,12 @@ const routes: Routes = [
   },
 
   {
-    path: "film",
+    path: "catalogo",
     component: MovieComponent
   },
 
   {
-    path: "film/:id",
+    path: "dettail/:id",
     component: MovieDettailComponent
   },
 
